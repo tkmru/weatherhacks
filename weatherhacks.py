@@ -174,7 +174,7 @@ class Weatherhacks:
         if self.readable_json_data["forecasts"][0]["temperature"]["max"] == None:
             return None
         else:
-            return self.readable_json_data["forecasts"][0]["temperature"]["max"]["celsius"]　#今日の最高気温
+            return self.readable_json_data["forecasts"][0]["temperature"]["max"]["celsius"] #今日の最高気温
 
     def tomorrow(self):
         return self.readable_json_data["forecasts"][1]["telop"] #明日の天気
