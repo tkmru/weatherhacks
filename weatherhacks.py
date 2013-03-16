@@ -191,14 +191,3 @@ ensure_ascii=False).encode('utf-8')
             return None
         else:
             return self.readable_json_data["forecasts"][1]["temperature"]["max"]["celsius"]
-
-
-if __name__=="__main__":
-    a = Weatherhacks(u"久留米")
-    print a.weather()
-    print a.today()
-    print a.today_min()
-    print a.today_max()
-    print a.tomorrow()
-    print a.tomorrow_min()
-    print a.tomorrow_max()
