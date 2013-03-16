@@ -154,8 +154,7 @@ class Weatherhacks:
         id = titenteigi[location]
         url = "http://weather.livedoor.com/forecast/webservice/json/v1?city=" + id
         json_data = urllib.urlopen(url).read()
-        encode_json_data = json.dumps(json.loads(json_data),
-ensure_ascii=False).encode('utf-8')
+        encode_json_data = json.dumps(json.loads(json_data),ensure_ascii=False).encode('utf-8')
         self.readable_json_data = json.loads(encode_json_data)
 
 
@@ -169,13 +168,13 @@ ensure_ascii=False).encode('utf-8')
         if self.readable_json_data["forecasts"][0]["temperature"]["min"] == None:
             return None
         else:
-            return self.readable_json_data["forecasts"][0]["temperature"]["min"]["celsius"]
+            return self.readable_json_data["forecasts"][0]["temperature"]["min"]["celsius"] #今日の最低気温
 
     def today_max(self):
         if self.readable_json_data["forecasts"][0]["temperature"]["max"] == None:
             return None
         else:
-            return self.readable_json_data["forecasts"][0]["temperature"]["max"]["celsius"]
+            return self.readable_json_data["forecasts"][0]["temperature"]["max"]["celsius"]　#今日の最高気温
 
     def tomorrow(self):
         return self.readable_json_data["forecasts"][1]["telop"] #明日の天気
@@ -184,10 +183,10 @@ ensure_ascii=False).encode('utf-8')
         if self.readable_json_data["forecasts"][1]["temperature"]["min"] == None:
             return None
         else:
-            return self.readable_json_data["forecasts"][1]["temperature"]["min"]["celsius"]
+            return self.readable_json_data["forecasts"][1]["temperature"]["min"]["celsius"] #明日の最低気温
 
     def tomorrow_max(self):
         if self.readable_json_data["forecasts"][1]["temperature"]["max"] == None:
             return None
         else:
-            return self.readable_json_data["forecasts"][1]["temperature"]["max"]["celsius"]
+            return self.readable_json_data["forecasts"][1]["temperature"]["max"]["celsius"] #明日の最高気温
