@@ -5,7 +5,7 @@ import json
 import urllib
 
 
-class Weatherhacks:
+class Weatherhacks(object):
 
     def __init__(self, location):
         titenteigi = {u"稚内": "011000",
