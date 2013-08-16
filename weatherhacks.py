@@ -165,13 +165,13 @@ class Weatherhacks(object):
         return self.readable_json_data["forecasts"][0]["telop"] #今日の天気
 
     def today_min(self):
-        if self.readable_json_data["forecasts"][0]["temperature"]["min"] == None:
+        if self.readable_json_data["forecasts"][0]["temperature"]["min"] is None:
             return None
         else:
             return self.readable_json_data["forecasts"][0]["temperature"]["min"]["celsius"] #今日の最低気温
 
     def today_max(self):
-        if self.readable_json_data["forecasts"][0]["temperature"]["max"] == None:
+        if self.readable_json_data["forecasts"][0]["temperature"]["max"] is None:
             return None
         else:
             return self.readable_json_data["forecasts"][0]["temperature"]["max"]["celsius"] #今日の最高気温
@@ -180,13 +180,13 @@ class Weatherhacks(object):
         return self.readable_json_data["forecasts"][1]["telop"] #明日の天気
 
     def tomorrow_min(self):
-        if self.readable_json_data["forecasts"][1]["temperature"]["min"] == None:
+        if self.readable_json_data["forecasts"][1]["temperature"]["min"] is None:
             return None
         else:
             return self.readable_json_data["forecasts"][1]["temperature"]["min"]["celsius"] #明日の最低気温
 
     def tomorrow_max(self):
-        if self.readable_json_data["forecasts"][1]["temperature"]["max"] == None:
+        if self.readable_json_data["forecasts"][1]["temperature"]["max"] is None:
             return None
         else:
             return self.readable_json_data["forecasts"][1]["temperature"]["max"]["celsius"] #明日の最高気温
